@@ -23,20 +23,19 @@ def crawling_template_with_href(url, css_selector, pre_url):
     return return_data
 
 
-def la_print(a):
-    sa = ""
+def rePrint(a):
     for i in a:
-        sa = sa + i + "\n"
-    return sa
+        print(i)
 
 
 datas = crawling_template('https://www.mss.go.kr/site/smba/ex/bbs/List.do?cbIdx=310', "#contents_inner > div > table > tbody > tr > td.subject > a")
 s = ",".join(datas)
 s1 = " ".join(s.split())
 s2 = re.split('; |, ', s1)
-pprint.pprint(s2)
-for i in s2:
-    print(i)
+# pprint.pprint(s2)
+# for i in s2:
+#     print(i)
+rePrint(s2)
 
 
 
